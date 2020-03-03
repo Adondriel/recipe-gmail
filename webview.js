@@ -1,6 +1,10 @@
-import path from 'path';
+"use strict";
 
-module.exports = (Franz) => {
+var _path = _interopRequireDefault(require("path"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+module.exports = Franz => {
   const getMessages = function getMessages() {
     let count = 0;
 
@@ -10,17 +14,15 @@ module.exports = (Franz) => {
       }
     }
 
-    // Just incase we don't end up with a number, set it back to zero (parseInt can return NaN)
     count = parseInt(count, 10);
+
     if (isNaN(count)) {
       count = 0;
     }
 
-    // set Franz badge
     Franz.setBadge(count);
   };
 
-  Franz.injectCSS(path.join(__dirname, 'service.css'));
-  // check for new messages every second and update Franz badge
+  Franz.injectCSS(_path.default.join(__dirname, 'service.css'));
   Franz.loop(getMessages);
 };

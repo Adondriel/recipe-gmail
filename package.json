@@ -5,8 +5,13 @@
   "description": "Gmail",
   "main": "index.js",
   "author": "Stefan Malzner <stefan@adlk.io>",
+  "contributors": ["Adam Pine <contact@adampine.me>"],
   "license": "MIT",
+  "repository": "https://github.com/meetfranz/recipe-gmail",
   "config": {
-    "serviceURL": "https://mail.google.com"
+    "serviceURL": "https://mail.google.com",
+    "serviceName": "Gmail",
+    "hasNotificationSound": true,
+    "message": "You must login before you close Franz to ensure this service is able to be configured (otherwise it goes to the wrong url)"
   }
 }
